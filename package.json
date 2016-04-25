@@ -1,0 +1,61 @@
+{
+  "name": "shadowland",
+  "version": "1.0.0",
+  "description": "A game board with pieces to experiment with graphql",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [
+    "fun",
+    "experiments",
+    "church of the subgenious"
+  ],
+  "author": "Cortlandt Winters",
+  "license": "@Gogo Gadgeteers Inc. (translated -> MIT)",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/cortrah/shwdowland.git"
+  },
+  "babel": {
+    "optional": [
+      "runtime",
+      "es7.asyncFunctions"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "browserify-shim": {
+    "react": "global:React"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.5.2",
+    "express": "4.13.4",
+    "express-graphql": "0.4.13",
+    "graphql": "0.4.18",
+    "graphql-relay": "0.3.6",
+    "immutable": "^3.8.0",
+    "react": "0.14.7"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^5.8.3",
+    "babel-eslint": "^4.0.5",
+    "babelify": "^6.1.1",
+    "browserify": "^13.0.0",
+    "browserify-shim": "^3.8.10",
+    "chai": "^3.0.0",
+    "chai-immutable": "^1.5.4",
+    "chai-subset": "^1.0.1",
+    "coveralls": "^2.11.2",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^3.2.2",
+    "isparta": "^3.0.3",
+    "mocha": "^2.2.5"
+  }
+}

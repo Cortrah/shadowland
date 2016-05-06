@@ -1,0 +1,23 @@
+
+ 
+<svg style="transform-origin: 50% 50% 0px; transform: matrix3d(0.999999, -0.00149951, 0, 0, 0.00149951, 0.999999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); -moz-user-select: none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2 -2 504 504" id="menu">
+<style>#menu{display:block;margin:0 auto;}a{cursor:pointer;outline:none;}.item .sector{transition:all .1s linear;fill:#fff;stroke:#111;}.item:hover .sector,.item:focus .sector{fill:#eee;}.menu-trigger{fill:#EA2A55;pointer-events:auto;}.menu-trigger:hover,.menu-trigger:focus{cursor:pointer;}symbol{overflow:visible;}</style>
+<g id="symbolsContainer">    <symbol viewBox="0 0 69 69" id="icon-1" class="icon icon-"><!--Replace the contents of this symbol with the content of your icon--><rect height="100%" width="100%" stroke-width="1" stroke="#111" fill="none"></rect><text font-size="1.2em" text-anchor="middle" dy=".3em" y="50%" x="50%" fill="#222">1</text></symbol>
+
+    <symbol viewBox="0 0 69 69" id="icon-2" class="icon icon-"><!--Replace the contents of this symbol with the content of your icon--><rect height="100%" width="100%" stroke-width="1" stroke="#111" fill="none"></rect><text font-size="1.2em" text-anchor="middle" dy=".3em" y="50%" x="50%" fill="#222">2</text></symbol>
+
+    <symbol viewBox="0 0 69 69" id="icon-3" class="icon icon-"><!--Replace the contents of this symbol with the content of your icon--><rect height="100%" width="100%" stroke-width="1" stroke="#111" fill="none"></rect><text font-size="1.2em" text-anchor="middle" dy=".3em" y="50%" x="50%" fill="#222">3</text></symbol>
+
+    <symbol viewBox="0 0 69 69" id="icon-4" class="icon icon-"><!--Replace the contents of this symbol with the content of your icon--><rect height="100%" width="100%" stroke-width="1" stroke="#111" fill="none"></rect><text font-size="1.2em" text-anchor="middle" dy=".3em" y="50%" x="50%" fill="#222">4</text></symbol>
+
+</g>
+<g id="itemsContainer">        <a data-svg-origin="250 250" transform="matrix(1,0,0,1,0,0)" xlink:title=" " xlink:href=" " tabindex="0" role="link" id="item-1" class="item"><path class="sector" d="M375,250 l125,0 A250,250 0 0,0 434.31933420253097,81.10244809608494 l-92.15966710126548,84.44877595195751 A125,125 0 0,1 375,250" stroke="#111" fill="none"></path><use transform="rotate(68.75 408.44134521484375 188.38552856445312)" y="153.88552856445312" x="373.94134521484375" height="69" width="69" xlink:href="#icon-1"></use></a>
+        <a data-svg-origin="250 250" transform="matrix(0.69674,-0.71731,0.71731,0.69674,-103.51599593248613,255.14204432715857)" xlink:title=" " xlink:href=" " tabindex="0" role="link" id="item-2" class="item"><path class="sector" d="M375,250 l125,0 A250,250 0 0,0 434.31933420253097,81.10244809608494 l-92.15966710126548,84.44877595195751 A125,125 0 0,1 375,250" stroke="#111" fill="none"></path><use transform="rotate(68.75 408.44134521484375 188.38552856445312)" y="153.88552856445312" x="373.94134521484375" height="69" width="69" xlink:href="#icon-2"></use></a>
+        <a data-svg-origin="250 250" transform="matrix(-0.02908,-0.99957,0.99957,-0.02908,7.376942165227717,507.165417206328)" xlink:title=" " xlink:href=" " tabindex="0" role="link" id="item-3" class="item"><path class="sector" d="M375,250 l125,0 A250,250 0 0,0 434.31933420253097,81.10244809608494 l-92.15966710126548,84.44877595195751 A125,125 0 0,1 375,250" stroke="#111" fill="none"></path><use transform="rotate(68.75 408.44134521484375 188.38552856445312)" y="153.88552856445312" x="373.94134521484375" height="69" width="69" xlink:href="#icon-3"></use></a>
+        <a data-svg-origin="250 250" transform="matrix(-0.73727,-0.67559,0.67559,-0.73727,265.4217822986159,603.216886106446)" xlink:title=" " xlink:href=" " tabindex="0" role="link" id="item-4" class="item"><path class="sector" d="M375,250 l125,0 A250,250 0 0,0 434.31933420253097,81.10244809608494 l-92.15966710126548,84.44877595195751 A125,125 0 0,1 375,250" stroke="#111" fill="none"></path><use transform="rotate(68.75 408.44134521484375 188.38552856445312)" y="153.88552856445312" x="373.94134521484375" height="69" width="69" xlink:href="#icon-4"></use></a>
+</g>
+<g id="trigger" class="trigger menu-trigger" role="button">
+<circle cx="250" cy="250" r="55"></circle>
+ 
+</g>
+</svg>

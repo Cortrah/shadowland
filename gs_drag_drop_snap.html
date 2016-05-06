@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+        h1 {
+            margin: 5px 0;
+        }
+        h3 {
+            margin:0;
+            font-size:16px;
+        }
+        .box {
+            background-color: #91e600;
+            text-align: center;
+            font-family: Asap, Avenir, Arial, sans-serif;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+            position: absolute;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .dragger1{
+            top:10px;
+            left:10px;
+        }
+        .dragger2{
+            top:70px;
+            left:10px;
+        }
+
+        .target {
+            background-color: #CCC;
+            text-align: center;
+            font-family: Asap, Avenir, Arial, sans-serif;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+            position: absolute;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        #target1{
+            top:10px;
+            left:300px;
+        }
+
+
+
+        #target2{
+            top:160px;
+            left:340px;
+        }
+
+
+        #target3{
+            top:260px;
+            left:140px;
+        }
+
+
+        .showOver{
+            background-color: red;
+        }
+
+
+        #demo {
+            width:800px;
+            height:400px;
+            background-color:black;
+            position:relative;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/jqueryui/jquery-ui.min.js"></script>
+<script src="libs/gs_club/src/minified/TweenMax.min.js"></script>
+<script src="libs/gs_club/src/minified/utils/Draggable.min.js"></script>
+
+<div id="demo">
+    <div class="box dragger1">Drag 1</div>
+    <div class="box dragger2">Drag 2</div>
+
+    <div id="target1" class="target">Target 1</div>
+    <div id="target2" class="target">Target 2</div>
+    <div id="target3" class="target">Target 3</div>
+</div>
+
+<script>
+    var targets = $(".target");
+    var overlapThreshold = "50%";
+
+    // go through all the draggable objects and store their starting positions
+    // so can return to them when dragged off the targets
+
+    var boxes = $(".box");
+    $.each(boxes, function(i,e)
+    {
+        var position = $(e).offset();
+        e.originalLeft = position.left - 8;
+        e.originalTop = position.top - 8;
+    });
+
+    Draggable.create(".box", {
+        bounds:"#demo",
+        edgeResistance:0.65,
+        type:"x,y",
+        throwProps:true,
+        onDragStart:function(e) {
+
+        },
+
+
+        // changes the colour of the targets whilst dragging to give feedback that a
+        // dragged object is going to snap to it
+        onDrag:function(e) {
+            for(var i=0; i<targets.length;i++){
+                if (this.hitTest(targets[i], overlapThreshold)) {
+                    $(targets[i]).addClass("showOver");
+                } else {
+                    $(targets[i]).removeClass("showOver");
+                }
+            }
+        },
+
+        onDragEnd:function(e) {
+            var snapMade = false;
+            for(var i=0; i<targets.length;i++){
+                if(this.hitTest(targets[i], overlapThreshold)){
+
+                    // only snap to an available target, i.e.
+                    // one without a class of "occupied"
+                    if(!$(targets[i]).hasClass("occupied")){
+
+                        // get the position of the target so can move
+                        // dragging item exactly on it when released
+                        var p = $(targets[i]).position();
+
+                        // add a class of occupied to target to stop other items
+                        // being snapped to it
+                        $(targets[i]).addClass("occupied");
+
+                        // tween onto target
+                        TweenLite.to(e.target,0.1, {left:p.left, top:p.top, x:0, y:0});
+
+                        // is a property called targetAttachedTo directly on the dragged item.
+                        // this stores the target we have snapped to.  Allows us to free up
+                        // the target if we drag it off it
+
+                        // before we update that property first checks that we haven't dragged
+                        // from one target straight to another as this would balls it up
+                        if(e.target.targetAttachedTo!=$(targets[i]) && e.target.targetAttachedTo!=undefined){
+                            e.target.targetAttachedTo.removeClass("occupied"); e.target.targetAttachedTo = undefined;
+                        }
+
+                        // now store new target in targetAttachedTo property
+                        e.target.targetAttachedTo = $(targets[i]);
+                        snapMade = true;
+                    }
+
+                }
+            }
+
+            // if the dragged item isn't over a target send it back to its
+            // start position
+            if(!snapMade){
+                if(e.target.targetAttachedTo != undefined){
+                    e.target.targetAttachedTo.removeClass("occupied");
+                };
+                TweenLite.to(e.target,0.1, {x:0, y:0, top:e.target.originalTop, left:e.target.originalLeft});
+            }
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

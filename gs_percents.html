@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            font-family:sans-serif;
+            margin:0;
+            padding:0;
+            color:#888;
+            background:#2B2C2D;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+
+        .device {
+            width:100%;
+            height:100%;
+            background-color:#111;
+            position:relative;
+            text-align:center;
+            font-size: 1.5em;
+            display: table;
+        }
+
+        .device p {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .device nav {
+            display: table-cell;
+            vertical-align: middle;
+            z-index:10001;
+            background: transparent;
+        }
+
+        .box {
+            cursor:pointer;
+            width:100%;
+            height:100%;
+            position:absolute;
+            color:#ccc;
+            display:table;
+        }
+
+
+        .dragular {
+            background-color: #737144;
+            text-align: center;
+            font-family: Signika Negative, Avenir, Arial, sans-serif;
+            font-size: 18px;
+            width: 196px;
+            height: 100px;
+            line-height: 100px;
+            color: black;
+            position: absolute;
+            top:0;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .box code {
+            font-size: 1.3em;
+        }
+
+        .red {
+            background-color:#833;
+        }
+
+        .blue {
+            background-color:#369;
+        }
+    </style>
+</head>
+<body>
+    <div class="device">
+        <div id="redBox" class="box red">
+        </div>
+        <div id="blueBox" class="box blue">
+            <div class="nav">
+                <div id="gogoBtn" class="dragular"></div>
+
+                <button id="hostBtn">
+                    HOST
+                </button>
+                <button id="playBtn">
+                    PLAY
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="libs/gs_club/src/minified/TweenMax.min.js"></script>
+    <script src="libs/gs_club/src/minified/utils/Draggable.min.js"></script>
+
+    <script>
+        TweenLite.defaultEase = Power3.easeInOut;
+
+        var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:1});
+        tl.from("#blueBox", 1, {yPercent:-100, force3D:true}).to("#blueBox", 1, {yPercent:120}, "+=3");
+        tl.play();
+
+        Draggable.create("#gogoBtn",{
+           onClick:function(){
+               alert('touchie')
+           }
+        });
+
+    </script>
+</body>
+</html>

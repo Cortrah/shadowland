@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #draggables {
+            width: 100px; height: 100px;
+            padding: 0.5em; float: left;
+            margin: 10px 10px 10px 0;
+            background-color: #d4ac78;
+        }
+        #droppables {
+            width: 150px; height: 150px;
+            padding: 0.5em; float: left;
+            margin: 10px;
+            background-color: #878a56;
+        }
+    </style>
+</head>
+<body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/jqueryui/jquery-ui.min.js"></script>
+<script src="libs/gs_club/src/minified/TweenMax.min.js"></script>
+<script src="libs/gs_club/src/minified/utils/Draggable.min.js"></script>
+
+<div id="draggables" class="ui-widget-content">
+    <p>Drag me</p>
+</div>
+
+<div id="droppables" class="ui-widget-header">
+    <p>Drop here</p>
+</div>
+
+
+<script>
+    $('#draggables').draggable({
+        revert: function(droppable) {
+            if (droppable === false) {
+                // Drop was rejected, tween back to original position.
+                TweenLite.to(this, 0.4, { left:0, top:0 });
+            }
+            return false;
+        }
+    });
+
+    $('#droppables').droppable({
+        drop: function(event, ui) {
+            var x = $(this).position().left;
+            var y = $(this).position().top;
+            TweenLite.to(ui.draggable, 0.4, { left:x, top:y });
+        }
+    });
+</script>
+</body>
+</html>

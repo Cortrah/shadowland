@@ -1,0 +1,215 @@
+{
+  "1": {
+    "id": "1",
+    "name": "Space Opera",
+    "positions": [
+      {
+        "id": "1",
+        "name": "Hyperion Flow",
+        "code": "hyp",
+        "userId":"2",
+        "color": "11223344",
+        "firstTurn":1,
+        "lastTurn":1,
+        "isSecret": false,
+        "regions":["1","2"],
+        "homeRegionId":["1"],
+        "score":0,
+        "tradeValue":5,
+        "tradePartners":[],
+        "allies":[],
+        "money":100,
+        "materials":100,
+        "research":100,
+        "moneyIncome":10,
+        "materialIncome":10,
+        "researchIncome":10,
+        "units":[],
+        "items":[]
+      },
+      {
+        "id": "2",
+        "name": "AstroDog Pack",
+        "code": "hyp",
+        "userId":"3",
+        "color": "44332211",
+        "firstTurn":1,
+        "lastTurn":1,
+        "isSecret": false,
+        "regions":["3","4"],
+        "homeRegionId":["3"],
+        "score":0,
+        "tradeValue":5,
+        "tradePartners":[],
+        "allies":[],
+        "money":100,
+        "materials":100,
+        "research":100,
+        "moneyIncome":10,
+        "materialIncome":10,
+        "researchIncome":10,
+        "units":[]
+      }
+    ],
+    "maps": [
+      {
+        "id": "1",
+        "name": "Galaxy Map",
+        "code": "gm",
+        "height": 2,
+        "width": 2,
+        "centerX":1,
+        "centerY":1,
+        "bg": "galaxy.png",
+        "regions": [
+          {
+            "id": "1",
+            "name": "Syrius",
+            "code": "sys",
+            "row": 1,
+            "col": 1,
+            "money": 1,
+            "materials": 1,
+            "research": 1,
+            "environmentTypeId": 1,
+            "regionsBorders":["1","2"],
+            "isSecret": false
+          },
+          {
+            "id": "2",
+            "name": "Speakeasy",
+            "code": "spk",
+            "row": 1,
+            "col": 2,
+            "money": 1,
+            "materials": 1,
+            "research": 1,
+            "environmentTypeId": 1,
+            "regionsBorders":["1","3"],
+            "isSecret": false
+          },
+          {
+            "id": "3",
+            "name": "Beelzebub",
+            "code": "bub",
+            "row": 2,
+            "col": 1,
+            "money": 1,
+            "materials": 1,
+            "research": 1,
+            "environmentTypeId": 1,
+            "borders":["2","4"],
+            "isSecret": false
+          },
+          {
+            "id": "4",
+            "name": "Frankenberry",
+            "code": "fby",
+            "row": 2,
+            "col": 2,
+            "money": 1,
+            "materials": 1,
+            "research": 1,
+            "environmentTypeId": 1,
+            "regionsBorders":["3","4"],
+            "isSecret": false
+          }
+        ],
+        "areas":[],
+        "regionsBorders":[
+          {
+            "id":"1",
+            "name":"Syrius-Speakeasy",
+            "code":"1-2",
+            "sourceRegionId": "1",
+            "sinkRegionId": "2",
+            "borderTypeId": "1",
+            "isSecret": false
+          },
+          {
+            "id":"2",
+            "name":"Syrius-Beelzebub",
+            "code":"1-3",
+            "sourceRegionId": "1",
+            "sinkRegionId": "3",
+            "borderTypeId": "1",
+            "isSecret": false
+          },
+          {
+            "id":"3",
+            "name":"SpeakEasy-Frankenberry",
+            "code":"2-4",
+            "sourceRegionId": "2",
+            "sinkRegionId": "4",
+            "borderTypeId": "1",
+            "isSecret": false
+          },
+          {
+            "id":"4",
+            "name":"Beelzebub-Frankenberry",
+            "code":"3-4",
+            "sourceRegionId": "3",
+            "sinkRegionId": "4",
+            "borderTypeId": "1",
+            "isSecret": false
+          }
+        ],
+        "borderTypes":[{
+            "id": "1",
+            "name": "adjacent",
+            "code": "adj",
+            "description": "Allows unrestricted movement at no cost",
+            "isDirectional": "false"
+          }
+        ],
+        "environmentTypes":[
+          {
+            "id":"1",
+            "name":"clear",
+            "code":"c",
+            "description":"Basic flat terrain with no modifiers",
+            "effect":"a function that just returns it's argument unchanged"
+          },
+          {
+            "id":"2",
+            "name":"forest",
+            "code":"f",
+            "description":"Forested terrain with +3 range defense, +1 melle defense",
+            "effect":"a function that takes a movement type and a cost and returns a new cost"
+          }
+        ]
+      }
+    ],
+    "turns": [
+      {
+        "id": "1",
+        "name": "Turn 1",
+        "number": 1,
+        "introduction": "Your people are ready to explore the universe, good luck",
+        "results":"",
+        "positionActions":[
+        ],
+        "unitActions":[
+        ]
+      }
+    ],
+    "currentTurn":1,
+    "status": "PREPARING",
+    "nextTick": "2016-12-03T00:00:00.000Z",
+    "users": [
+      {
+        "id":"1",
+        "name": "Inspector Gadget",
+        "role": "HOST"
+      }, {
+        "id":"2",
+        "name": "Cortrah",
+        "role": "PLAYER"
+      }, {
+        "id":"3",
+        "name": "Kolgrim",
+        "role": "PLAYER"
+      }
+    ]
+  }
+}
